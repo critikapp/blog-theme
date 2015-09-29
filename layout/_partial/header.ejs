@@ -1,4 +1,41 @@
-<header id="header">
+<header class="mdl-layout__header mdl-layout__header--scroll">
+  <div class="mdl-layout__header-row">
+    <div class="header-logo-container">
+      <a class="header-logo-link" href="<%- url_for() %>" id="logo">
+        <img class="mdl-logo header-logo" src="/css/images/logo-inverted.svg" onerror="this.onerror=null; this.src='/css/images/logo-inverted@80.png';">
+      </a>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+    <nav class="mdl-navigation mde-centered mdl-layout--large-screen-only">
+      <% for (var i in theme.menu){ %>
+        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+      <% } %>
+    </nav>
+    <% if (theme.rss){ %>
+      <a class="mdl-navigation__link mdl-layout--large-screen-only" href="<%- theme.rss %>"><i class="fa fa-rss"></i></a>
+    <% } %>
+    <form action="//google.com/search" method="get" accept-charset="UTF-8" autocomplete="off">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+        <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-search">
+          <i class="material-icons">search</i>
+        </label>
+        <div class="mdl-textfield__expandable-holder">
+          <input class="mdl-textfield__input" type="text" name="q" results="0" id="fixed-header-drawer-search" />
+        </div>
+      </div>
+      <input type="hidden" name="sitesearch" value="<%- config.url %>">
+    </form>
+  </div>
+</header>
+<div class="mdl-layout__drawer mdl-layout--small-screen-only">
+  <nav class="mdl-navigation">
+    <% for (var i in theme.menu){ %>
+      <a class="mdl-navigation__link mdl-typography--text-uppercase" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+    <% } %>
+  </nav>
+</div>
+
+<!--<header id="header">
   <div id="banner"></div>
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
@@ -29,4 +66,4 @@
       </div>
     </div>
   </div>
-</header>
+</header>-->

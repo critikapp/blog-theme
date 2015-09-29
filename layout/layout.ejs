@@ -1,18 +1,15 @@
 <%- partial('_partial/head') %>
 <body>
-  <div id="container">
-    <div id="wrap">
-      <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
-      <div class="outer">
-        <section id="main"><%- body %></section>
-        <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
-          <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
-        <% } %>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header is-small-screen">
+    <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+    <main class="mdl-layout__content">
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--8-col"><%- body %></div>
+        <div class="mdl-cell mdl-cell--4-col"><%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %></div>
       </div>
       <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
-    </div>
-    <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
-    <%- partial('_partial/after-footer') %>
+    </main>
   </div>
+  <%- partial('_partial/after-footer') %>
 </body>
 </html>
