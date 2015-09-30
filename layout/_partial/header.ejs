@@ -1,69 +1,41 @@
-<header class="mdl-layout__header mdl-layout__header--scroll">
-  <div class="mdl-layout__header-row">
-    <div class="header-logo-container">
-      <a class="header-logo-link" href="<%- url_for() %>" id="logo">
-        <img class="mdl-logo header-logo" src="/css/images/logo-inverted.svg" onerror="this.onerror=null; this.src='/css/images/logo-inverted@80.png';">
-      </a>
+<div class="ui left vertical menu sidebar">
+  <% for (var i in theme.menu){ %>
+    <div class="item">
+      <a class="uppercase" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
     </div>
-    <div class="mdl-layout-spacer"></div>
-    <nav class="mdl-navigation mde-centered mdl-layout--large-screen-only">
-      <% for (var i in theme.menu){ %>
-        <a class="mdl-navigation__link mdl-typography--text-uppercase" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
-      <% } %>
-    </nav>
-    <% if (theme.rss){ %>
-      <a class="mdl-navigation__link mdl-layout--large-screen-only" href="<%- theme.rss %>"><i class="fa fa-rss"></i></a>
-    <% } %>
-    <form action="//google.com/search" method="get" accept-charset="UTF-8" autocomplete="off">
-      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
-        <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-search">
-          <i class="material-icons">search</i>
-        </label>
-        <div class="mdl-textfield__expandable-holder">
-          <input class="mdl-textfield__input" type="text" name="q" results="0" id="fixed-header-drawer-search" />
-        </div>
-      </div>
-      <input type="hidden" name="sitesearch" value="<%- config.url %>">
-    </form>
-  </div>
-</header>
-<div class="mdl-layout__drawer mdl-layout--small-screen-only">
-  <nav class="mdl-navigation">
-    <% for (var i in theme.menu){ %>
-      <a class="mdl-navigation__link mdl-typography--text-uppercase" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
-    <% } %>
-  </nav>
+  <% } %>
 </div>
-
-<!--<header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="<%- url_for() %>" id="logo"><%= config.title %></a>
-      </h1>
-      <% if (theme.subtitle){ %>
-        <h2 id="subtitle-wrap">
-          <a href="<%- url_for() %>" id="subtitle"><%= theme.subtitle %></a>
-        </h2>
-      <% } %>
+<div class="pusher">
+<div class="ui top secondary fixed menu grid">
+  <div class="item tablet only mobile only column" onclick="$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');">
+    <i class="icon sidebar"></i>
+  </div>
+  <div class="item logo-item">
+    <a href="<%- url_for() %>">
+      <img class="logo" src="/css/images/logo-inverted.svg" onerror="this.onerror=null; this.src='/css/images/logo-inverted@80.png';">
+    </a>
+  </div>
+  <% for (var i in theme.menu){ %>
+    <div class="item computer only column">
+      <a class="uppercase" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        <% for (var i in theme.menu){ %>
-          <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
-        <% } %>
-      </nav>
-      <nav id="sub-nav">
-        <% if (theme.rss){ %>
-          <a id="nav-rss-link" class="nav-icon" href="<%- theme.rss %>" title="RSS Feed"></a>
-        <% } %>
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <%- search_form({button: '&#xF002;'}) %>
+  <% } %>
+  <div class="right menu grid computer only tablet only column">
+    <div class="ui grid">
+    <% if (theme.rss){ %>
+      <div class="item computer only column">
+        <a href="<%- theme.rss %>"><i class="feed icon"></i></a>
       </div>
+    <% } %>
+    <div class="item">
+      <form action="//google.com/search" method="get" accept-charset="UTF-8" autocomplete="off">
+        <div class="ui icon input">
+          <input placeholder="Search..." name="q" type="text">
+          <i class="circular search link icon" onclick="$(this).closest('form').submit();"></i>
+          <input type="hidden" name="sitesearch" value="<%- config.url %>">
+        </div>
+      </form>
+    </div>
     </div>
   </div>
-</header>-->
+</div>

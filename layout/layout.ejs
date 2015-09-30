@@ -1,15 +1,12 @@
 <%- partial('_partial/head') %>
 <body>
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header is-small-screen">
-    <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
-    <main class="mdl-layout__content">
-      <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--8-col"><%- body %></div>
-        <div class="mdl-cell mdl-cell--4-col"><%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %></div>
-      </div>
-      <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
-    </main>
+  <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+    <div class="ui grid container">
+      <div class="twelve wide computer ten wide tablet twelve wide mobile column"><%- body %></div>
+      <div class="four wide computer six wide tablet twelve wide mobile column"><%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %></div>
+    </div>
+    <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
+    <%- partial('_partial/after-footer') %>
   </div>
-  <%- partial('_partial/after-footer') %>
 </body>
 </html>

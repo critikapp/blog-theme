@@ -1,47 +1,42 @@
 html, body
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif !default;
+  font-family: 'Lato', 'Helvetica', 'Arial', sans-serif !default
 
-.mdl-layout__container.has-scrolling-header
-  .mdl-layout__content
-    overflow: visible;
+.ui.top.menu
+  background-color: #2b3946
+  margin: 0
+  .item
+    height: 64px
+    color: white
+    @media only screen and (max-width: 991px)
+      height: 56px
+    a
+      color: white
+  .logo-item
+    @media only screen and (max-width: 639px)
+      margin: 0 auto;
+  .logo
+    height: 37px
+    @media only screen and (max-width: 991px)
+      height: 33px
+    @media only screen and (max-width: 639px)
+      margin-left: -56px;
+  .menu>.ui.icon.input>i.circular.icon
+    top: .24em
+    right: .24em
+  &+.ui.grid
+    margin-top: 0
+    padding-top: 78px
+    padding-top: calc(64px + 1rem)
+    @media only screen and (max-width: 991px)
+      padding-top: 70px
+      padding-top: calc(56px + 1rem)
 
-.mdl-layout__header
-  background-color: #2B3946;
-  .mdl-layout__header-row
-    padding: 0 40px 0 40px;
-    @media only screen and (max-width: 1024px)
-      padding: 0 16px 0 16px;
-  .header-logo-container
-    line-height: 64px;
-    @media only screen and (max-width: 1024px)
-      line-height: 56px;
-      display: flex;
-      position: absolute;
-      justify-content: center;
-      left: 0;
-      top: 0;
-      width: 100%;
-  .header-logo-link
-    text-align: middle;
-    z-index: 1;
-  .header-logo
-    height: 37px;
-    margin: 0;
-    float: none;
-  .mdl-textfield
-    @media only screen and (max-width: 640px)
-      display: none;
-    .mdl-textfield__input
-      border-bottom: 1px solid white;
-  .mdl-navigation__link
-    font-size: 14px;
-    font-weight: 400;
-    z-index: 1;
+.uppercase
+  text-transform: uppercase
 
-.mde-centered
-  display: flex;
-  position: absolute;
-  justify-content: center;
-  left: 0;
-  top: 0;
-  width: 100%;
+.lowercase
+  text-transform: lowercase
+
+.ui.grid.menu>.column:not(.row),
+.ui.grid.menu>.row>.column
+  width: auto
