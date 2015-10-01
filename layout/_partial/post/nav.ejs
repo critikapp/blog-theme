@@ -1,7 +1,11 @@
 <% if (post.prev || post.next){ %>
-  <div class="ui two column stackable center aligned grid basic segment">
-    <div class="column">
-      <% if (post.prev){ %>
+  <% if (post.prev && post.next){ %>
+    <div class="ui two column stackable center aligned grid basic segment">
+  <% } else { %>
+    <div class="ui one column stackable center aligned grid basic segment">
+  <% } %>
+    <% if (post.prev){ %>
+      <div class="column">
         <a href="<%- url_for(post.prev.path) %>" class="ui left labeled icon button">
           <i class="left arrow icon"></i>
           Newer
@@ -9,10 +13,10 @@
         <a href="<%- url_for(post.prev.path) %>" class="meta">
           <%= post.prev.title %>
         </a>
-      <% } %>
-    </div>
-    <div class="column">
-      <% if (post.next){ %>
+      </div>
+    <% } %>
+    <% if (post.next){ %>
+      <div class="column">
         <a href="<%- url_for(post.next.path) %>" class="ui right labeled icon button">
           <i class="right arrow icon"></i>
           Older
@@ -20,7 +24,7 @@
         <a href="<%- url_for(post.next.path) %>" class="meta">
           <%= post.next.title %>
         </a>
-      <% } %>
-    </div>
+      </div>
+    <% } %>
   </div>
 <% } %>
