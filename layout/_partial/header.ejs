@@ -7,7 +7,7 @@
 </div>
 <div class="pusher">
 <div class="ui top secondary fixed menu grid">
-  <div class="item tablet only mobile only column" onclick="$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');">
+  <div class="item mobile only column" onclick="$('.ui.sidebar').sidebar('setting', 'transition', 'overlay').sidebar('toggle');">
     <i class="icon sidebar"></i>
   </div>
   <div class="item logo-item">
@@ -16,7 +16,7 @@
     </a>
   </div>
   <% for (var i in theme.menu){ %>
-    <div class="item computer only column">
+    <div class="item computer only tablet only column">
       <a class="" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
     </div>
   <% } %>
