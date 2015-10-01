@@ -1,8 +1,8 @@
 # Header
 menu:
-  critik.com: http://critik.com
-  Blog Home: /
+  Home: /
   Archives: /archives
+  Go to critik.com: http://critik.com
 rss: /atom.xml
 
 # Content
