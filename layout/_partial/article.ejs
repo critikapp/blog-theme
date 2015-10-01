@@ -23,7 +23,7 @@
       <% } %>
     </div>
     <div class="extra content">
-      <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="right floated share-popup">Share</a>
+      <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="right floated share-popup">Share <i class="share icon"></i></a>
       <div class="ui flowing popup top left transition hidden">
         <div class="ui fluid input">
           <input class="article-share-input" value="<%- post.permalink %>" onClick="this.setSelectionRange(0, this.value.length);">
