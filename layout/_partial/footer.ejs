@@ -1,9 +1,13 @@
 <div class="ui secondary menu bottom">
-  <div class="item right">
+  <div class="item">
     <a href="http://twitter.com/critikapp" target="_blank"><i class="twitter icon"></i></a>
     <a href="http://facebook.com/critikapp" target="_blank"><i class="facebook icon"></i></a>
     <a href="http://plus.google.com/104268979507417470242/" target="_blank"><i class="google plus icon"></i></a>
-    &nbsp;&nbsp;&nbsp;&nbsp;
+    <% if (theme.rss){ %>
+      <a href="<%- theme.rss %>"><i class="feed icon"></i></a>
+    <% } %>
+  </div>
+  <div class="item right">
     &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
   </div>
 </div>

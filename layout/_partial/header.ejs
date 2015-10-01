@@ -22,20 +22,15 @@
   <% } %>
   <div class="right menu grid computer only tablet only column">
     <div class="ui grid">
-    <% if (theme.rss){ %>
-      <div class="item computer only column">
-        <a href="<%- theme.rss %>"><i class="feed icon"></i></a>
+      <div class="item right">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" autocomplete="off">
+          <div class="ui icon input">
+            <input placeholder="Search..." name="q" type="text">
+            <i class="circular search link icon" onclick="$(this).closest('form').submit();"></i>
+            <input type="hidden" name="sitesearch" value="<%- config.url %>">
+          </div>
+        </form>
       </div>
-    <% } %>
-    <div class="item right">
-      <form action="//google.com/search" method="get" accept-charset="UTF-8" autocomplete="off">
-        <div class="ui icon input">
-          <input placeholder="Search..." name="q" type="text">
-          <i class="circular search link icon" onclick="$(this).closest('form').submit();"></i>
-          <input type="hidden" name="sitesearch" value="<%- config.url %>">
-        </div>
-      </form>
-    </div>
     </div>
   </div>
 </div>
