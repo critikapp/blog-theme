@@ -1,6 +1,6 @@
 # Header
 menu:
-  Critik.com: http://critik.com
+  critik.com: http://critik.com
   Blog Home: /
   Archives: /archives
 rss: /atom.xml
@@ -12,11 +12,8 @@ fancybox: true
 # Sidebar
 sidebar: right
 widgets:
-- category
-- tag
-- tagcloud
-- archive
 - recent_posts
+- archive
 
 # Miscellaneous
 google_analytics:

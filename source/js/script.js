@@ -134,4 +134,13 @@
 
     $container.removeClass('mobile-nav-on');
   });
+
+  $('.share-popup').popup({
+    inline   : true,
+    hoverable: true,
+    position : 'bottom right',
+    delay: {
+      hide: 500
+    }
+  });
 })(jQuery);

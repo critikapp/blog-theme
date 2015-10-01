@@ -1,7 +1,7 @@
 <div class="ui left vertical menu sidebar">
   <% for (var i in theme.menu){ %>
     <div class="item">
-      <a class="uppercase" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+      <a class="" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
     </div>
   <% } %>
 </div>
@@ -17,7 +17,7 @@
   </div>
   <% for (var i in theme.menu){ %>
     <div class="item computer only column">
-      <a class="uppercase" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+      <a class="" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
     </div>
   <% } %>
   <div class="right menu grid computer only tablet only column">
@@ -27,7 +27,7 @@
         <a href="<%- theme.rss %>"><i class="feed icon"></i></a>
       </div>
     <% } %>
-    <div class="item">
+    <div class="item right">
       <form action="//google.com/search" method="get" accept-charset="UTF-8" autocomplete="off">
         <div class="ui icon input">
           <input placeholder="Search..." name="q" type="text">

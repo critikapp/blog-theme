@@ -1,22 +1,26 @@
 <% if (post.prev || post.next){ %>
-<nav id="article-nav">
-  <% if (post.prev){ %>
-    <a href="<%- url_for(post.prev.path) %>" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        <% if (post.prev.title){ %>
+  <div class="ui two column stackable center aligned grid basic segment">
+    <div class="column">
+      <% if (post.prev){ %>
+        <a href="<%- url_for(post.prev.path) %>" class="ui left labeled icon button">
+          <i class="left arrow icon"></i>
+          Newer
+        </a><br/>
+        <a href="<%- url_for(post.prev.path) %>" class="meta">
           <%= post.prev.title %>
-        <% } else { %>
-          (no title)
-        <% } %>
-      </div>
-    </a>
-  <% } %>
-  <% if (post.next){ %>
-    <a href="<%- url_for(post.next.path) %>" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"><%= post.next.title %></div>
-    </a>
-  <% } %>
-</nav>
+        </a>
+      <% } %>
+    </div>
+    <div class="column">
+      <% if (post.next){ %>
+        <a href="<%- url_for(post.next.path) %>" class="ui right labeled icon button">
+          <i class="right arrow icon"></i>
+          Older
+        </a><br/>
+        <a href="<%- url_for(post.next.path) %>" class="meta">
+          <%= post.next.title %>
+        </a>
+      <% } %>
+    </div>
+  </div>
 <% } %>

@@ -2,8 +2,8 @@
 <body>
   <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
     <div class="ui grid container">
-      <div class="twelve wide computer ten wide tablet twelve wide mobile column"><%- body %></div>
-      <div class="four wide computer six wide tablet twelve wide mobile column"><%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %></div>
+      <div class="twelve wide computer ten wide tablet sixteen wide mobile column"><%- body %></div>
+      <div class="four wide computer six wide tablet sixteen wide mobile column"><%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %><br/></div>
     </div>
     <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>
     <%- partial('_partial/after-footer') %>

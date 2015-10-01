@@ -1,12 +1,16 @@
 html, body
   font-family: 'Lato', 'Helvetica', 'Arial', sans-serif !default
 
-.ui.top.menu
+.ui.top.menu,
+.ui.bottom.menu
   background-color: #2b3946
   margin: 0
   .item
-    height: 64px
     color: white
+
+.ui.top.menu
+  .item
+    height: 64px
     @media only screen and (max-width: 991px)
       height: 56px
     a
@@ -31,6 +35,12 @@ html, body
       padding-top: 70px
       padding-top: calc(56px + 1rem)
 
+.ui.bottom.menu
+  .icon
+    color: white
+    font-size: 1.2em
+    width: 30px
+
 .uppercase
   text-transform: uppercase
 
@@ -40,3 +50,25 @@ html, body
 .ui.grid.menu>.column:not(.row),
 .ui.grid.menu>.row>.column
   width: auto
+
+.ui.vertical.divider.connected
+  &:before,
+  &:after
+    height: 100%
+
+.ui.menu
+  .item.share
+    >.icon
+      font-size: 1.5rem
+      margin: 0
+    &:hover
+      >.icon
+        color: white
+      &.twitter
+        background-color: #00aced
+      &.facebook
+        background-color: #3b5998
+      &.pinterest
+        background-color: #cb2027
+      &.google
+        background-color: #dd4b39

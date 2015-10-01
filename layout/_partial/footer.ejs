@@ -1,10 +1,9 @@
-<footer id="footer">
-  <% if (theme.sidebar === 'bottom'){ %>
-    <%- partial('_partial/sidebar') %>
-  <% } %>
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
-    </div>
+<div class="ui secondary menu bottom">
+  <div class="item right">
+    <a href="http://twitter.com/critikapp" target="_blank"><i class="twitter icon"></i></a>
+    <a href="http://facebook.com/critikapp" target="_blank"><i class="facebook icon"></i></a>
+    <a href="http://plus.google.com/104268979507417470242/" target="_blank"><i class="google plus icon"></i></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
   </div>
-</footer>
+</div>
