@@ -21,6 +21,9 @@ html, body
     a
       color: white
   .logo-item
+    >a:not(.ui)
+      line-height: 1
+      padding-top: 2px
     @media only screen and (max-width: 639px)
       margin: 0 auto;
   .logo
@@ -28,7 +31,7 @@ html, body
     @media only screen and (max-width: 991px)
       height: 33px
     @media only screen and (max-width: 639px)
-      margin-left: -56px;
+      margin-left: -72px
   .menu>.ui.icon.input>i.circular.icon
     top: .24em
     right: .24em
@@ -36,6 +39,7 @@ html, body
     margin-top: 0
     padding-top: 78px
     padding-top: calc(64px + 1rem)
+    padding-bottom: 45px
     @media only screen and (max-width: 991px)
       padding-top: 70px
       padding-top: calc(56px + 1rem)
@@ -43,6 +47,7 @@ html, body
 .ui.bottom.menu
   position: absolute
   width: 100%
+  height: 45px
   bottom: 0
   .icon
     color: white
