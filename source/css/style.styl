@@ -55,12 +55,6 @@ html, body
     font-size: 1.2em
     width: 30px
 
-.uppercase
-  text-transform: uppercase
-
-.lowercase
-  text-transform: lowercase
-
 .ui.grid.menu>.column:not(.row),
 .ui.grid.menu>.row>.column
   width: auto
@@ -75,6 +69,8 @@ html, body
     >.icon
       font-size: 1.5rem
       margin: 0
+      @media only screen and (max-width: 767px)
+        margin: -10px
     &:hover
       >.icon
         color: white

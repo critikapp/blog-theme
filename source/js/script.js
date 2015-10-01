@@ -139,6 +139,7 @@
     inline   : true,
     hoverable: true,
     position : 'bottom right',
+    lastResort : 'top right',
     delay: {
       hide: 500
     }
