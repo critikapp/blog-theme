@@ -4,9 +4,11 @@
       <div class="header">Recent posts</div>
     </div>
     <div class="content">
+      <div class="ui bulleted list">
       <% site.posts.sort('date', -1).limit(5).each(function(post){ %>
-        <a href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a><br/>
+        <div class="item"><a href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a></div>
       <% }) %>
+      </div>
     </div>
   </div>
 <% } %>
