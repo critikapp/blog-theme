@@ -24,9 +24,11 @@
     <div class="ui grid">
       <div class="item right">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" autocomplete="off">
-          <div class="ui icon input">
-            <input placeholder="Search..." name="q" type="text">
-            <i class="circular search link icon" onclick="$(this).closest('form').submit();"></i>
+          <div class="ui search">
+            <div class="ui icon input">
+              <input class="prompt" placeholder="Search..." name="q" type="text">
+              <i class="search icon link" onclick="$(this).closest('form').submit();"></i>
+            </div>
             <input type="hidden" name="sitesearch" value="<%- config.url %>">
           </div>
         </form>
