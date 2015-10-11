@@ -11,18 +11,20 @@
     </div>
   <% } %>
 <% } else { %>
-  <div class="ui feed">
+    <div>
     <% var last; %>
     <% page.posts.each(function(post, i){ %>
       <% var year = post.date.year(); %>
-      <% if (last != year){ %>
+      <% if (last !== year){ %>
         <% last = year; %>
-          <div class="event">
-            <a href="<%- url_for('archives/' + year) %>" class="archive-year"><%= year %></a>
-          </div>
+    </div>
+    <div class="ui three column doubling stackable grid">
+      <div class="row">
+        <a href="<%- url_for('archives/' + year) %>" class="archive-year"><%= year %></a>
+      </div>
       <% } %>
-      <div class="event">
-        <div class="ui card">
+      <div class="column">
+        <div class="ui fluid card">
           <div class="content">
             <div class="meta">
               <%- partial('post/date', {post: post, class_name: '', date_format: 'MMM D'}) %>
@@ -32,15 +34,15 @@
             </div>
           </div>
         </div>
-      </div><br/>
-    <% }) %>
-    <% if (page.total > 1){ %>
-      <div class="ui center aligned basic segment">
-        <%- cr_paginator({
-          prev_text: '<i class="angle double left icon"></i>',
-          next_text: '<i class="angle double right icon"></i>'
-        }) %>
       </div>
-    <% } %>
-  </div>
+    <% }) %>
+    </div>
+  <% if (page.total > 1){ %>
+    <div class="ui center aligned basic segment">
+      <%- cr_paginator({
+        prev_text: '<i class="angle double left icon"></i>',
+        next_text: '<i class="angle double right icon"></i>'
+      }) %>
+    </div>
+  <% } %>
 <% } %>
