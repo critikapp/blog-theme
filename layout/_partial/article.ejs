@@ -1,4 +1,4 @@
-<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost" itemtype="http://schema.org/Article" itemref="_publisher _author">
   <div class="ui fluid card">
     <div class="content">
       <div class="meta article-date">
@@ -19,14 +19,16 @@
           <a href="<%- url_for(post.path) %>#more" class="ui right labeled icon button"><i class="right arrow icon"></i><%= theme.excerpt_link %></a>
         <% } %>
       <% } else { %>
-        <%- post.content %>
+        <div itemprop="articleBody">
+          <%- post.content %>
+        </div>
       <% } %>
     </div>
     <div class="extra content">
       <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="right floated share-popup">Share <i class="share icon"></i></a>
       <div class="ui flowing popup top left transition hidden">
         <div class="ui fluid input">
-          <input class="article-share-input" value="<%- post.permalink %>" onClick="this.setSelectionRange(0, this.value.length);">
+          <input class="article-share-input" value="<%- post.permalink %>" onclick="this.setSelectionRange(0, this.value.length);">
         </div>
         <div class="ui menu">
           <a href="https://twitter.com/intent/tweet?url=<%- encodeURIComponent(post.permalink) %>" class="item share twitter" target="_blank" title="Twitter"><i class="twitter icon"></i></a>

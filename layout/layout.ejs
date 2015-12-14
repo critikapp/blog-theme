@@ -1,5 +1,11 @@
 <%- partial('_partial/head') %>
 <body>
+  <span id="_publisher" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Critik Pty Ltd">
+  </span>
+  <span id="_author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Critik">
+  </span>
   <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
     <div class="ui grid container">
       <div class="twelve wide computer ten wide tablet sixteen wide mobile column"><%- body %></div>
